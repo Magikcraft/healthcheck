@@ -16,8 +16,8 @@ npm i @magikcraft/healthcheck
 
 ```
 environmentVars: {
-	HEALTHCHECKS_IO_URL: 'https://hc-ping.com/b3f36309-af54-451c-8f06-eb4620953b45',
-	HEALTHCHECKS_IO_PERIOD: 15
+	"HEALTHCHECKS_IO_URL": "https://hc-ping.com/b3f36309-af54-451c-8f06-eb4620953b45",
+	"HEALTHCHECKS_IO_PERIOD": 15
 }
 ```
 

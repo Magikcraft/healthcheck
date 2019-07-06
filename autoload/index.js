@@ -10,5 +10,6 @@ var HEALTHCHECKS_IO_URL = java.lang.System.getenv('HEALTHCHECKS_IO_URL');
 var HEALTHCHECKS_IO_PERIOD = java.lang.System.getenv('HEALTHCHECKS_IO_PERIOD') || DEFAULT_PERIOD;
 if (HEALTHCHECKS_IO_URL) {
     log("Registering healthcheck for " + HEALTHCHECKS_IO_URL);
+    http_1.default.get(HEALTHCHECKS_IO_URL);
     setInterval(function () { return http_1.default.get(HEALTHCHECKS_IO_URL); }, HEALTHCHECKS_IO_PERIOD);
 }

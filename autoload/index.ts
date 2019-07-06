@@ -13,5 +13,6 @@ const HEALTHCHECKS_IO_PERIOD =
 
 if (HEALTHCHECKS_IO_URL) {
 	log(`Registering healthcheck for ${HEALTHCHECKS_IO_URL}`)
+	http.get(HEALTHCHECKS_IO_URL)
 	setInterval(() => http.get(HEALTHCHECKS_IO_URL), HEALTHCHECKS_IO_PERIOD)
 }

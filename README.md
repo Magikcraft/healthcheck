@@ -1,8 +1,29 @@
 # @magikcraft/healthcheck
 
-This is a Minecraft plugin written for the Scriptcraft Modular Architecture.
+This is a Minecraft plugin written for the Scriptcraft Modular Architecture. It provides an integration with [healthchecks.io](https://healthchecks.io).
 
-## Building
+## To use it
+
+- Grab yourself a healthcheck url from [healthchecks.io](https://healthchecks.io).
+
+- Install it in your project:
+
+```
+npm i @magikcraft/healthcheck
+```
+
+- Now in your `smac.json` file, add an `environmentVars` key:
+
+```
+environmentVars: {
+	HEALTHCHECKS_IO_URL: 'https://hc-ping.com/b3f36309-af54-451c-8f06-eb4620953b45',
+	HEALTHCHECKS_IO_PERIOD: 15
+}
+```
+
+Note: the period is in minutes.
+
+## Developing
 
 -   Install the TypeScript compiler:
 

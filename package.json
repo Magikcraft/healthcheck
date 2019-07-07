@@ -1,6 +1,6 @@
 {
 	"name": "@magikcraft/healthcheck",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"main": "lib/index.ts",
 	"scripts": {
 		"test": "smac start -t -e",
@@ -8,6 +8,7 @@
 		"start:nukkit": "tsc && concurrently --success first --handle-input \"smac start -f smac-nukkit.json\" \"tsc -w\"",
 		"start:bukkit": "tsc && concurrently --success first --handle-input \"smac start\" \"tsc -w\""
 	},
+	"scriptcraft_load_dir": "autoload",
 	"smaPluginConfig": {
 		"scriptcraft_load_dir": "autoload"
 	},

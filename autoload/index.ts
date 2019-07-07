@@ -1,5 +1,5 @@
 import { Logger } from '@magikcraft/healthcheck/lib/log'
-import http from 'http'
+const http = require('http')
 
 const log = Logger(__filename)
 

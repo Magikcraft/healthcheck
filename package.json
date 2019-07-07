@@ -1,6 +1,6 @@
 {
 	"name": "@magikcraft/healthcheck",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"main": "lib/index.ts",
 	"scripts": {
 		"test": "smac start -t -e",

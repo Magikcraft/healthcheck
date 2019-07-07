@@ -20,7 +20,11 @@ if (HEALTHCHECKS_IO_ID) {
 			log(`Healthcheck response: ${resCode}`)
 		)
 
-	log(`Registering healthcheck for ${url}`)
+	log(
+		`Registering healthcheck for ${url} every ${HEALTHCHECKS_IO_PERIOD /
+			60 /
+			1000} minutes`
+	)
 	get()
 	setInterval(get, HEALTHCHECKS_IO_PERIOD)
 }

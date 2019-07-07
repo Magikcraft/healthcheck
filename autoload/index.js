@@ -16,7 +16,9 @@ if (HEALTHCHECKS_IO_ID) {
             return log("Healthcheck response: " + resCode);
         });
     };
-    log("Registering healthcheck for " + url_1);
+    log("Registering healthcheck for " + url_1 + " every " + HEALTHCHECKS_IO_PERIOD /
+        60 /
+        1000 + " minutes");
     get();
     setInterval(get, HEALTHCHECKS_IO_PERIOD);
 }

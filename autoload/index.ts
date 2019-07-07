@@ -11,8 +11,6 @@ const HEALTHCHECKS_IO_ID = java.lang.System.getenv('HEALTHCHECKS_IO_ID')
 const HEALTHCHECKS_IO_PERIOD =
 	java.lang.System.getenv('HEALTHCHECKS_IO_PERIOD') || DEFAULT_PERIOD
 
-log(`${{ HEALTHCHECKS_IO_ID }}`)
-
 if (HEALTHCHECKS_IO_ID) {
 	const url = `https://hc-ping.com/${HEALTHCHECKS_IO_ID}`
 	const get = () =>

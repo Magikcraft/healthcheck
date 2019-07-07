@@ -8,7 +8,6 @@ log('@magikcraft/healthcheck loaded!');
 var DEFAULT_PERIOD = 15 * 60 * 1000; // 15 minutes
 var HEALTHCHECKS_IO_ID = java.lang.System.getenv('HEALTHCHECKS_IO_ID');
 var HEALTHCHECKS_IO_PERIOD = java.lang.System.getenv('HEALTHCHECKS_IO_PERIOD') || DEFAULT_PERIOD;
-log("" + { HEALTHCHECKS_IO_ID: HEALTHCHECKS_IO_ID });
 if (HEALTHCHECKS_IO_ID) {
     var url_1 = "https://hc-ping.com/" + HEALTHCHECKS_IO_ID;
     var get = function () {

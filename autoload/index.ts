@@ -15,7 +15,9 @@ log(`${{ HEALTHCHECKS_IO_ID }}`)
 
 if (HEALTHCHECKS_IO_ID) {
 	const url = `https://hc-ping.com/${HEALTHCHECKS_IO_ID}`
+	const get = () => http.request({ method: 'GET', url })
+
 	log(`Registering healthcheck for ${url}`)
-	http.get(url)
-	setInterval(() => http.get(url), HEALTHCHECKS_IO_PERIOD)
+	get()
+	setInterval(get, HEALTHCHECKS_IO_PERIOD)
 }

@@ -7,12 +7,15 @@ log('@magikcraft/healthcheck loaded!')
 
 // Healthchecks.io
 const DEFAULT_PERIOD = 15 * 60 * 1000 // 15 minutes
-const HEALTHCHECKS_IO_URL = java.lang.System.getenv('HEALTHCHECKS_IO_URL')
+const HEALTHCHECKS_IO_ID = java.lang.System.getenv('HEALTHCHECKS_IO_ID')
 const HEALTHCHECKS_IO_PERIOD =
 	java.lang.System.getenv('HEALTHCHECKS_IO_PERIOD') || DEFAULT_PERIOD
 
-if (HEALTHCHECKS_IO_URL) {
-	log(`Registering healthcheck for ${HEALTHCHECKS_IO_URL}`)
-	http.get(HEALTHCHECKS_IO_URL)
-	setInterval(() => http.get(HEALTHCHECKS_IO_URL), HEALTHCHECKS_IO_PERIOD)
+log(`${{ HEALTHCHECKS_IO_ID }}`)
+
+if (HEALTHCHECKS_IO_ID) {
+	const url = `https://hc-ping.com/${HEALTHCHECKS_IO_ID}`
+	log(`Registering healthcheck for ${url}`)
+	http.get(url)
+	setInterval(() => http.get(url), HEALTHCHECKS_IO_PERIOD)
 }

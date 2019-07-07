@@ -15,7 +15,10 @@ log(`${{ HEALTHCHECKS_IO_ID }}`)
 
 if (HEALTHCHECKS_IO_ID) {
 	const url = `https://hc-ping.com/${HEALTHCHECKS_IO_ID}`
-	const get = () => http.request({ method: 'GET', url })
+	const get = () =>
+		http.request({ method: 'GET', url }, (resCode: number, _: never) =>
+			log(`Healthcheck response: ${resCode}`)
+		)
 
 	log(`Registering healthcheck for ${url}`)
 	get()

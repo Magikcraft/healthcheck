@@ -11,7 +11,11 @@ var HEALTHCHECKS_IO_PERIOD = java.lang.System.getenv('HEALTHCHECKS_IO_PERIOD') |
 log("" + { HEALTHCHECKS_IO_ID: HEALTHCHECKS_IO_ID });
 if (HEALTHCHECKS_IO_ID) {
     var url_1 = "https://hc-ping.com/" + HEALTHCHECKS_IO_ID;
-    var get = function () { return http.request({ method: 'GET', url: url_1 }); };
+    var get = function () {
+        return http.request({ method: 'GET', url: url_1 }, function (resCode, _) {
+            return log("Healthcheck response: " + resCode);
+        });
+    };
     log("Registering healthcheck for " + url_1);
     get();
     setInterval(get, HEALTHCHECKS_IO_PERIOD);
